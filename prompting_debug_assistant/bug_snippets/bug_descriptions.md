@@ -10,7 +10,7 @@
 
 ## Bug 3 - bug3.py
 **Intended Behavior**: Parse comma-separated user data string.
-**Issue Type**: Runtime exception (KeyError/IndexError).
+**Issue Type**: Runtime exception (IndexError).
 **Notes**: Fails when expected format or index is missing.
 
 ## Bug 4 - bug4.js
