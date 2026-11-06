@@ -5,7 +5,7 @@ def get_last_n_items(items, n):
     in the range function boundary condition.
     """
     result = []
-    # The error is here: range goes up to n + 1 instead of n
+    # Intentional bug: range goes up to n + 1 instead of n
     for i in range(n + 1):
         if i < len(items):
             index = len(items) - i
