@@ -1,4 +1,6 @@
 function addDiscount(price, discount) {
-    // Bug: string concatenation instead of numeric subtraction if types mismatch
-    return price - discount;
+    // Data type misuse: string subtraction can yield NaN if not handled
+    let parsedPrice = parseFloat(price);
+    let parsedDiscount = parseFloat(discount);
+    return parsedPrice - parsedDiscount;
 }
