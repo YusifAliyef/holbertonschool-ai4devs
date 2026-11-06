@@ -17,3 +17,8 @@
 **Intended Behavior**: Subtract discount from given price.
 **Issue Type**: Misuse of data types.
 **Notes**: Fails if inputs are passed as strings instead of numbers.
+
+## Bug 5 - bug5.c
+**Intended Behavior**: Calculate sum of array elements in C.
+**Issue Type**: Off-by-one / Buffer over-read.
+**Notes**: Loop runs up to i <= size instead of i < size, causing segmentation fault or invalid memory access.
