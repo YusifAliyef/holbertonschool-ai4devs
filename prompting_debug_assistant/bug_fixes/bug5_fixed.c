@@ -3,13 +3,15 @@
 
 /* 
  * This function attempts to sum elements of an array correctly.
- * Fixed loop condition from <= size to < size.
+ * Fixed loop condition from <= size to < size to avoid buffer over-read.
  */
 int calculate_sum(int *arr, int size) {
     int sum = 0;
+    
     for (int i = 0; i < size; i++) {
         sum += arr[i];
     }
+    
     return sum;
 }
 

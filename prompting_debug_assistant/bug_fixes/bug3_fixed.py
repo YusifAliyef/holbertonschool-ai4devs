@@ -1,7 +1,7 @@
 def parse_user_data(data_string):
     """
     Parses comma-separated user data string safely.
-    Fixed with length and format validation.
+    Fixed with length and format validation to avoid IndexError.
     """
     if not data_string or "," not in data_string:
         return None
