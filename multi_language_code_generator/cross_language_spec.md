@@ -7,7 +7,13 @@ Parse Apache log format and compute:
 - Error rate
 
 ## Inputs
-- Sample log files (text format with IP, timestamp, method, status)
+- **Input Format**: Plain text Apache Common Log Format (.log or .txt files)
+- **Log Line Schema**: `<IP> - - [<timestamp>] "<METHOD> <path> <protocol>" <status> <bytes>`
+- **Fields**: 
+  - IP address (string)
+  - Timestamp (string/datetime)
+  - HTTP Method (GET, POST, etc.)
+  - Status code (integer, e.g., 200, 404, 500)
 
 ## Outputs
 - JSON object with statistics (total_requests, unique_visitors, error_rate_percentage)
