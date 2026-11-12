@@ -2,7 +2,7 @@ import unittest
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from log_analyzer import LogAnalyzer
 
 class TestLogAnalyzer(unittest.TestCase):
@@ -50,16 +50,16 @@ class TestLogAnalyzer(unittest.TestCase):
         self.assertEqual(self.analyzer.parse_line("bad_log_entry")["status"], 200)
 
     def test_9_analyze_many_success(self):
-        lines = ['1.1.1.1 - - [date] "GET / HTTP/1.0" 200 123'] * 10
+        lines = ['1.1.1.1 - - [10/Oct/2000:13:55:36 -0700] "GET / HTTP/1.0" 200 123'] * 10
         res = self.analyzer.analyze(lines)
         self.assertEqual(res["total_requests"], 10)
         self.assertEqual(res["error_rate"], 0.0)
 
     def test_10_analyze_all_errors(self):
-        lines = ['1.1.1.1 - - [date] "GET / HTTP/1.0" 502 123'] * 5
+        lines = ['1.1.1.1 - - [10/Oct/2000:13:55:36 -0700] "GET / HTTP/1.0" 502 123'] * 5
         res = self.analyzer.analyze(lines)
         self.assertEqual(res["total_requests"], 5)
         self.assertEqual(res["error_rate"], 100.0)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
