@@ -1,0 +1,1 @@
+{"total_requests":5,"unique_visitors":3,"error_count":2,"error_rate":40.0,"total_bytes":450,"status_counts":{"200":3,"404":1,"500":1},"top_paths":[{"path":"/index.html","count":3},{"path":"/about.html","count":1},{"path":"/login","count":1}],"malformed_lines":0}
