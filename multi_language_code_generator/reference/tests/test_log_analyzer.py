@@ -19,6 +19,26 @@ def analyzer():
     return LogAnalyzer()
 
 
+def test_parse_status_200(analyzer):
+    assert analyzer.parse_line(make_line(200)) == {"status": 200}
+
+
+def test_parse_status_404(analyzer):
+    assert analyzer.parse_line(make_line(404)) == {"status": 404}
+
+
+def test_parse_status_500(analyzer):
+    assert analyzer.parse_line(make_line(500)) == {"status": 500}
+
+
+def test_parse_malformed_line_raises(analyzer):
+    with pytest.raises(ValueError):
+        analyzer.parse_line("this is not a log line")
+
+
+def test_parse_non_numeric_status_raises(analyzer):
+    with pytest.raises(ValueError):
+        analyzer.parse_line(make_line("abc"))
 def test_analyze_empty_list(analyzer):
     assert analyzer.analyze([]) == {"total_requests": 0, "error_rate": 0.0}
 
